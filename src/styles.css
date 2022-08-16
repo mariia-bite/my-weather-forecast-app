@@ -1,0 +1,86 @@
+h1,
+h2,
+#main-emoji {
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  font-size: 40px;
+}
+h2,
+#main-emoji,
+#description {
+  text-align: right;
+  margin-right: 90px;
+}
+h3 {
+  text-align: left;
+  font-family: "Merriweather", serif;
+}
+h3 {
+  margin-left: 0px;
+  font-size: 12px;
+}
+
+#main-emoji,
+#celsius,
+#farenheit {
+  font-size: 30px;
+}
+footer {
+  text-align: center;
+}
+.input-city {
+  width: 425px;
+  border: none;
+}
+.search-button,
+#current-location {
+  width: 170px;
+  background: #53a8b6;
+  color: black;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  margin-left: 2px;
+  margin-top: -5px;
+  border: none;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.3);
+}
+.container {
+  margin: 30px 200px;
+  padding: 20px 60px 10px;
+  background: #bbe4e9;
+  max-width: 900px;
+  border-radius: 10px;
+  box-shadow: 9px 9px 5px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+  margin-top: 200px;
+  font-family: "Montserrat", sans-serif;
+}
+form {
+  padding: 10px 0 50px;
+}
+.future-days {
+  font-family: "Montserrat", sans-serif;
+  margin-top: 40px;
+  margin-right: -45px;
+  font-size: 18px;
+}
+.image-weather {
+  text-align: right;
+  margin-top: -65px;
+  margin-right: 10px;
+}
+
+.col {
+  margin-right: -30px;
+}
+.line {
+  color: #53a8b6;
+}
+#parameters {
+  list-style: none;
+  font-family: "Merriweather", serif;
+  font-size: 12px;
+  margin-top: 12px;
+}
