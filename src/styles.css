@@ -27,6 +27,8 @@ h3 {
 }
 footer {
   text-align: center;
+  margin-top: 150px;
+  font-family: "Montserrat", sans-serif;
 }
 .input-city {
   width: 425px;
@@ -53,10 +55,6 @@ footer {
   box-shadow: 9px 9px 5px rgba(0, 0, 0, 0.3);
 }
 
-footer {
-  margin-top: 200px;
-  font-family: "Montserrat", sans-serif;
-}
 form {
   padding: 10px 0 50px;
 }
