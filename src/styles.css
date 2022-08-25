@@ -7,11 +7,10 @@ h2 {
 h2,
 #description {
   text-align: right;
-  margin-right: 90px;
 }
 #main-emoji {
   display: block;
-  margin-right: 0 60px;
+  float: right;
 }
 
 h3 {
@@ -24,7 +23,7 @@ h3 {
 }
 
 #celsius,
-#farenheit {
+#fahrenheit {
   font-size: 30px;
 }
 footer {
@@ -83,4 +82,15 @@ form {
   font-family: "Merriweather", serif;
   font-size: 12px;
   margin-top: 12px;
+}
+
+.active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+
+.active:hover {
+  text-decoration: none;
+  color: black;
 }
