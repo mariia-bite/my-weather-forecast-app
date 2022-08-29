@@ -37,6 +37,10 @@ function showWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  document.querySelector("#today-temperature").innerHTML =
+    Math.round(celsiusTemperature);
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
 }
 function searchCity(city) {
   let apiKey = "037ebf292d4ad4957bb230ad97acdefe";
