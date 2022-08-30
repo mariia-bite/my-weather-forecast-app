@@ -21,6 +21,29 @@ if (minutes < 10) {
 let h3 = document.querySelector("h3");
 h3.innerHTML = `${day}, ${hours}:${minutes}`;
 
+function showForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thursday", "Friday", "Saturday", "Sunday"];
+  let forecastHTML = `<div class="row future-days">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` 
+        <div class="col">
+         <div class="weather-forecast-date">
+         ${day} </div>
+         <img class="emoji" src="" width="36"><br>
+         <div class="weather-forecast-temperature"> <span class ="max-temp">33 </span>°C <span class="min-temp"> 25</span>  °C
+
+         </div>
+         
+        </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showWeather(response) {
   document.querySelector("h1").innerHTML = response.data.name;
   celsiusTemperature = response.data.main.temp;
@@ -95,3 +118,4 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
+showForecast();
