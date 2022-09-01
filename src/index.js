@@ -21,29 +21,56 @@ if (minutes < 10) {
 let h3 = document.querySelector("h3");
 h3.innerHTML = `${day}, ${hours}:${minutes}`;
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  return days[day];
+}
+
 function showForecast(response) {
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Thursday", "Friday", "Saturday", "Sunday"];
+
   let forecastHTML = `<div class="row future-days">`;
 
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      ` 
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        ` 
         <div class="col">
          <div class="weather-forecast-date">
-         ${day} </div>
-         <img class="emoji" src="" width="36"><br>
-         <div class="weather-forecast-temperature"> <span class ="max-temp">33 </span>°C <span class="min-temp"> 25</span>  °C
+         ${formatDay(forecastDay.dt)}</div>
+         <img class="emoji" src="http://openweathermap.org/img/wn/${
+           forecastDay.weather[0].icon
+         }@2x.png" width="36"/><br>
+         <div class="weather-forecast-temperature"> <span class ="min-temp">${Math.round(
+           forecastDay.temp.min
+         )}°C </span> 
+         <span class="max-temp"> ${Nath.round(forecastDay.temp.max)}°C </span>  
 
          </div>
          
         </div>`;
+    }
   });
+
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 function getForecast(coordinates) {
+  console.log(coordinates);
   let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
   let apiURL = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiURL).then(showForecast);
@@ -98,7 +125,6 @@ searchForm.addEventListener("submit", showCity);
 
 let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", getCurrentLocation);
-searchCity("Kyiv");
 
 //converter
 function showFahrenheitTemperature(event) {
@@ -125,3 +151,4 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
+searchCity("Kyiv");
