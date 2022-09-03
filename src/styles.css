@@ -16,8 +16,6 @@ h2,
 h3 {
   text-align: left;
   font-family: "Merriweather", serif;
-}
-h3 {
   margin-left: 0px;
   font-size: 12px;
 }
@@ -55,7 +53,6 @@ footer {
   border-radius: 10px;
   box-shadow: 9px 9px 5px rgba(0, 0, 0, 0.3);
 }
-
 form {
   padding: 10px 0 50px;
 }

@@ -52,13 +52,13 @@ function showForecast(response) {
         <div class="col">
          <div class="weather-forecast-date">
          ${formatDay(forecastDay.dt)}</div>
-         <img class="emoji" src="http://openweathermap.org/img/wn/${
+         <img src="http://openweathermap.org/img/wn/${
            forecastDay.weather[0].icon
-         }@2x.png" width="36"/><br>
+         }@2x.png" width="40"/><br>
          <div class="weather-forecast-temperature"> <span class ="min-temp">${Math.round(
            forecastDay.temp.min
-         )}°C </span> 
-         <span class="max-temp"> ${Nath.round(forecastDay.temp.max)}°C </span>  
+         )}° </span> 
+         <span class="max-temp"> ${Math.round(forecastDay.temp.max)}° </span>  
 
          </div>
          
@@ -71,8 +71,8 @@ function showForecast(response) {
 }
 function getForecast(coordinates) {
   console.log(coordinates);
-  let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
-  let apiURL = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiURL).then(showForecast);
 }
 
